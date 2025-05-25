@@ -38,7 +38,7 @@ const Home = ({ user, setuser }) => {
         />
         <br />
         <a href="/Quiz">
-          <button  type="submit" disabled={!user.length>0} style={{ marginTop: 10 }}>
+          <button  type="submit" disabled={!user.length>0} style={{ marginTop: 10,color:"black"}}>
             Start the quiz
           </button>
         </a>
