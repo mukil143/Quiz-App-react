@@ -2,28 +2,58 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 
-  const questions=[
-    {
-      questions:"What is React ?",
-      options:["A backend framework","A database","A JavaScript library for building user interfaces","A programming language"],
-      answers:"A JavaScript library for building user interfaces"
-    },
-    {
-      questions:" Who developed React?",
-      options:["Google","Facebook","Microsoft","Twitter"],
-      answers:"Facebook"
-    },
-    {
-      questions:"What is used to pass data to a component from outside?",
-      options:["setState","render with arguments","props","PropTypes"],
-      answers:"props"
-    },
-    {
-      questions:"What is the command to create a new React application using Create React App?",
-      options:["npm start react-app","npm install react-app","npx create-react-app my-app","create-react-app install"],
-      answers:"npx create-react-app my-app" 
-    },
-  ]
+  const questions = [
+  {
+    question: "What is the capital of France?",
+    options: ["Berlin", "Madrid", "Paris", "Rome"],
+    answer: "Paris"
+  },
+  {
+    question: "How many continents are there in the world?",
+    options: ["5", "6", "7", "8"],
+    answer: "7"
+  },
+  {
+    question: "Which planet is known as the Red Planet?",
+    options: ["Venus", "Mars", "Jupiter", "Saturn"],
+    answer: "Mars"
+  },
+  {
+    question: "What is H2O commonly known as?",
+    options: ["Oxygen", "Water", "Hydrogen", "Salt"],
+    answer: "Water"
+  },
+  {
+    question: "Who wrote 'Romeo and Juliet'?",
+    options: ["Charles Dickens", "William Shakespeare", "J.K. Rowling", "Mark Twain"],
+    answer: "William Shakespeare"
+  },
+  {
+    question: "How many days are there in a leap year?",
+    options: ["364", "365", "366", "367"],
+    answer: "366"
+  },
+  {
+    question: "What color do you get when you mix red and yellow?",
+    options: ["Purple", "Green", "Orange", "Brown"],
+    answer: "Orange"
+  },
+  {
+    question: "Which animal is known as the King of the Jungle?",
+    options: ["Tiger", "Elephant", "Lion", "Bear"],
+    answer: "Lion"
+  },
+  {
+    question: "What do bees produce?",
+    options: ["Sugar", "Honey", "Wax", "Milk"],
+    answer: "Honey"
+  },
+  {
+    question: "Which is the largest ocean in the world?",
+    options: ["Indian Ocean", "Atlantic Ocean", "Arctic Ocean", "Pacific Ocean"],
+    answer: "Pacific Ocean"
+  }
+];
 
   // console.log(questions[0].questions)
 
@@ -44,7 +74,7 @@ const Quiz = ({user,score,setscore}) => {
   const [questionidx,setquestionidx]=useState(0);
 
   const handleAnswer=(selectedanswer)=>{
-    if(selectedanswer==questions[questionidx].answers){
+    if(selectedanswer==questions[questionidx].answer){
       setscore(prev=>prev+1)
     }
 
@@ -67,7 +97,7 @@ const Quiz = ({user,score,setscore}) => {
     <h1>Quiz Page...!</h1>
     <section>
       
-      <h2> {questionidx+1}. {questions[questionidx].questions}</h2>
+      <h2> {questionidx+1}. {questions[questionidx].question}</h2>
       <ul style={{listStyle:"none"}} >
         {questions[questionidx].options.map((option,idx)=>(
           <li style={{marginTop:10,textAlign:'center'}} key={idx} ><button onClick={(e)=>{
